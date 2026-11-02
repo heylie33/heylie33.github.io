@@ -1,0 +1,36 @@
+/* Poster strip inside the last work card — auto-scrolling */
+
+.work-posters {
+  margin-top: clamp(80px, 16vh, 180px);
+  margin-right: -60px;
+  overflow: hidden;
+}
+
+.work-poster-track {
+  grid-column-gap: 16px;
+  width: max-content;
+  display: flex;
+  will-change: transform;
+}
+
+.work-poster-card {
+  flex: none;
+  width: auto;
+  height: clamp(240px, 44vh, 500px);
+  display: block;
+}
+
+@media screen and (width<=991px) {
+  .work-posters {
+    margin-top: 56px;
+    margin-right: -25px;
+  }
+
+  .work-poster-track {
+    grid-column-gap: 12px;
+  }
+
+  .work-poster-card {
+    height: 260px;
+  }
+}

@@ -1,0 +1,94 @@
+---
+const footerContact = [
+  { href: 'mailto:793675257@qq.com', label: '793675257@qq.com' },
+  { href: 'tel:+8617798561063', label: '17798561063' },
+];
+---
+
+<div class="footer-wrapper">
+  <footer id="contact" class="footer-section">
+    <div class="w-layout-blockcontainer main-container w-container">
+      <div class="footer-connect">
+        <h2 class="footer-connect-heading">LET’S<br />CONNECT.</h2>
+
+        <div class="footer-connect-details">
+          {
+            footerContact.map((link) => (
+              <a href={link.href} class="footer-connect-link">
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="footer-connect-qr">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            class="footer-qr-arrow"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 4L14 14M14 14V5.5M14 14H5.5"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+
+          <figure class="footer-qr-figure">
+            <img
+              src="/images/wechat-qr.png"
+              alt="微信二维码"
+              loading="lazy"
+              class="footer-qr-image"
+            />
+            <figcaption class="footer-qr-caption">扫码添加微信</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <a
+        href="#top"
+        class="scroll-to-top-link footer-top-cell w-inline-block"
+        aria-label="Back to top"
+      >
+        <div class="up-arrow">
+          <svg
+            width="13"
+            height="17"
+            viewBox="0 0 13 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M12.4351 6.75098C10.7184 6.51818 7.09839 4.86429 6.3521 0.111029"
+              stroke="currentColor"
+              stroke-width="1.5"></path>
+            <path
+              d="M0.125977 6.98047C1.83279 6.68376 5.3885 4.89588 5.95684 0.11808"
+              stroke="currentColor"
+              stroke-width="1.5"></path>
+            <line
+              x1="6.08922"
+              y1="0.956703"
+              x2="6.37919"
+              y2="16.4872"
+              stroke="currentColor"
+              stroke-width="1.5"></line>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </footer>
+
+  <div id="top" class="anchor-point"></div>
+</div>
+
+<script>
+  import '../scripts/footer.js';
+</script>

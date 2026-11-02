@@ -1,0 +1,102 @@
+/* Shared button & animated underline */
+
+.button {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+}
+
+.button-text-wrapper {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  color: var(--color--white);
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.button-arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.animated-line-wrapper {
+  background-color: #ffffff80;
+  flex: none;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+
+.animated-line-wrapper.accordion-line {
+  background-color: var(--color--black);
+  height: 2px;
+}
+
+.animated-line-wrapper.experience-line,
+.animated-line-wrapper.achievement-line {
+  background-color: var(--color--black);
+  height: 2px;
+  position: absolute;
+  inset: auto 0% 0%;
+}
+
+.animated-line-wrapper.nav-link {
+  background-color: #fff0;
+}
+
+.animated-line {
+  background-color: var(--color--white);
+  width: 100%;
+  height: 100%;
+  transform: translate(-100%);
+}
+
+.animated-line.accordion-line {
+  background-color: #b70f7a;
+}
+
+.animated-line.experience-line {
+  background-color: #3c920d;
+}
+
+.animated-line.achievement-line {
+  background-color: #a38308;
+}
+
+/* Solid variant — compact mono label on a dark chip, used in the hero */
+
+.button--solid {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  background-color: #1b1b1b;
+  border-radius: 2px;
+  color: var(--color--white);
+  text-decoration: none;
+  flex-flow: row;
+  padding: 22px 26px;
+  transition: background-color 0.3s;
+}
+
+.button--solid:hover {
+  background-color: #2a2a2a;
+}
+
+.button--solid .button-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.button--solid .button-arrow {
+  flex: none;
+  width: 14px;
+  height: 14px;
+}

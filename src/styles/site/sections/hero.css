@@ -1,0 +1,286 @@
+/* Hero section */
+
+.hero-section {
+  padding-top: 240px;
+  padding-bottom: var(--_sizes---section-padding);
+  background-image: url(/images/BG-pattern.svg);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: 1920px 805px;
+}
+
+.hero-container {
+  grid-column-gap: 145px;
+  grid-row-gap: 145px;
+  flex-flow: column;
+  display: flex;
+}
+
+.hero-heading-wrapper {
+  grid-column-gap: 30px;
+  grid-row-gap: 0px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 0.35fr 1fr 0.35fr;
+  grid-auto-columns: 1fr;
+  place-items: center start;
+  width: 100%;
+  display: grid;
+}
+
+.hero-text-image {
+  width: 36px;
+  height: 36px;
+}
+
+.hero-text-name-wrapper {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  white-space: nowrap;
+  flex-flow: wrap;
+  place-content: center flex-start;
+  align-items: center;
+  margin-left: 15px;
+  display: flex;
+}
+
+.circular-link {
+  z-index: 0;
+  aspect-ratio: 1;
+  background-color: var(--color--carbon-black);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 200px;
+  max-height: 200px;
+  padding: 10%;
+  display: flex;
+  position: relative;
+}
+
+.circular-link-text {
+  z-index: -1;
+  width: 80%;
+  margin: auto;
+  position: absolute;
+  inset: 0%;
+}
+
+.circular-link-arrow {
+  width: 20%;
+  height: 40%;
+  max-height: 40px;
+}
+
+.hero-para-wrapper {
+  grid-column-gap: 100px;
+  grid-row-gap: 100px;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
+/* --- refreshed hero: name block, oversized title, CJK intro, pill buttons --- */
+
+.hero-text-name-wrapper {
+  grid-row-gap: 8px;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  margin-left: 0;
+}
+
+.hero-hello {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.hero-name {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.hero-para-wrapper {
+  grid-row-gap: 96px;
+}
+
+.hero-intro {
+  grid-row-gap: 48px;
+  flex-flow: column;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+
+.hero-role {
+  letter-spacing: 0.01em;
+  margin: 0;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.hero-lead {
+  color: #9a9a9a;
+  margin: 0;
+  width: 100%;
+  max-width: 620px;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.hero-actions {
+  grid-column-gap: 18px;
+  grid-row-gap: 18px;
+  align-items: center;
+  display: flex;
+}
+
+.hero-actions .button-wrapper {
+  flex: none;
+  width: auto;
+}
+
+.circular-link-text {
+  width: 82%;
+}
+
+.circular-link-arrow {
+  position: absolute;
+  inset: 0;
+  width: 22px;
+  height: 44px;
+  margin: auto;
+}
+
+.circular-link-label {
+  fill: var(--color--white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+}
+
+@media screen and (width>=992px) {
+  .hero-section {
+    background-image: none;
+    /* Content column and title metrics taken from the design reference:
+       content ≈ 858px at 1440, title ≈ 113px with a 1.27 line box. */
+    --hero-name-column: clamp(140px, 11vw, 158px);
+    --hero-title-size: clamp(56px, 7.85vw, 113px);
+  }
+
+  .hero-section .main-container {
+    max-width: 918px;
+  }
+
+  .hero-container {
+    grid-row-gap: 12px;
+  }
+
+  .hero-heading-wrapper {
+    grid-template-columns: var(--hero-name-column) 1fr 208px;
+    position: relative;
+  }
+
+  /* The badge must not stretch the second title row — it sits beside "Designer". */
+  .hero-circular-cell {
+    position: absolute;
+    top: 181px;
+    right: calc(100% - var(--hero-name-column) - 30px - 5.594 * var(--hero-title-size));
+  }
+  .circular-link {
+    aspect-ratio: auto;
+    background-color: transparent;
+    border-radius: 0;
+    width: 238px;
+    height: 206px;
+    max-width: none;
+    max-height: none;
+  }
+
+  .circular-link-text {
+    width: 74%;
+  }
+
+  .hero-hello {
+    font-size: 32px;
+  }
+
+  .hero-name {
+    font-size: 27px;
+  }
+
+  .hero-title .display {
+    letter-spacing: -0.035em;
+    font-size: var(--hero-title-size);
+    font-weight: 500;
+    line-height: 1.27;
+  }
+
+  .hero-role {
+    font-size: 62px;
+  }
+
+  .hero-lead {
+    width: 100%;
+    max-width: calc(var(--hero-name-column) + 30px + 5.594 * var(--hero-title-size));
+    font-size: 32px;
+  }
+}
+
+@media screen and (width<=991px) {
+  .hero-hello {
+    font-size: 26px;
+  }
+
+  .hero-name {
+    font-size: 22px;
+  }
+
+  .hero-role {
+    font-size: 38px;
+  }
+
+  .hero-lead {
+    font-size: 20px;
+  }
+
+  .hero-intro {
+    grid-row-gap: 16px;
+  }
+}
+
+@media screen and (width<=479px) {
+  .hero-hello {
+    font-size: 22px;
+  }
+
+  .hero-name {
+    font-size: 18px;
+  }
+
+  .hero-role {
+    font-size: 28px;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+}

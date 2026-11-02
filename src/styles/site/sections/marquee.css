@@ -1,0 +1,83 @@
+/* Marquee heading strip (shared by work / clients / contact) */
+
+.selected-work-section {
+  padding-top: var(--_sizes---section-padding);
+  /* The last work card is a 110vh sticky panel, so it already ends with its own
+     black space; no extra padding here keeps About tight to the poster strip. */
+  padding-bottom: 0;
+  background-color: var(--color--black);
+  position: relative;
+}
+
+.selected-work-container {
+  grid-column-gap: 150px;
+  grid-row-gap: 150px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  overflow: hidden;
+}
+
+.marquee-container {
+  width: 100%;
+}
+
+.marquee-text-slot {
+  grid-column-gap: 80px;
+  grid-row-gap: 80px;
+  flex: none;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 80px;
+  display: flex;
+}
+
+.marquee-arrow {
+  width: 80px;
+  height: 80px;
+}
+
+.marquee-text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 115px;
+  font-weight: 500;
+  line-height: 130px;
+}
+
+.marquee-text-wrapper {
+  flex: none;
+  display: flex;
+}
+
+/* Work strip runs at half scale and alternates 品牌案例作品 / Selected work. */
+.selected-work-section .marquee-text {
+  font-size: 58px;
+  line-height: 66px;
+}
+
+.selected-work-section .marquee-arrow {
+  width: 40px;
+  height: 40px;
+}
+
+.selected-work-section .marquee-text-slot {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  margin-right: 40px;
+}
+
+.selected-work-section .marquee-wrapper {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}

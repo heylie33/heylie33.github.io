@@ -1,0 +1,135 @@
+---
+import Marquee from './Marquee.astro';
+import Posters from './Posters.astro';
+
+const projects = [
+  {
+    slug: 'rosi-roli',
+    title: 'RosiRoli',
+    category: 'Branding',
+    background: '#20130a',
+    color: '#ffffff',
+    cover: '/images/work/rosi-roli-wordmark.png',
+    hover: '/images/work/rosi-roli-hover.jpg',
+  },
+  {
+    slug: 'zenstorage',
+    title: 'ZenStorage',
+    category: 'Branding',
+    background: '#f5f1ea',
+    color: '#2b2723',
+    cover: '/images/work/zenstorage-wordmark.png',
+    hover: '/images/work/zenstorage-hover.jpg',
+    compactLogo: true,
+  },
+  {
+    slug: 'green-loop',
+    title: '绿行循环',
+    category: 'Event Visual Design',
+    background: '#21ad38',
+    color: '#ffffff',
+    cover: '/images/work/greenloop-wordmark.png',
+    hover: '/images/work/greenloop-hover.jpg',
+  },
+  {
+    slug: 'sweat-beautiful',
+    title: '把汗流漂亮',
+    category: 'Event Visual Design',
+    background: '#de385f',
+    color: '#ffffff',
+    cover: '/images/work/sweat-wordmark.png',
+    hover: '/images/work/sweat-hover.jpg',
+  },
+  {
+    slug: 'posters',
+    title: '海报设计',
+    category: 'Poster Design',
+    background: '#000000',
+    color: '#ffffff',
+    posters: true,
+  },
+];
+---
+
+<section class="selected-work-section" id="work">
+  <div class="selected-work-container">
+    <Marquee items={['品牌案例作品', 'Selected work']} />
+
+    <h2 class="sr-only">Selected work</h2>
+
+    <div class="work-collection-list-wrapper">
+      <div role="list" class="work-collection-list">
+        {
+          projects.map((project) => (
+            <div role="listitem" class="work-collection-item">
+              <div
+                class="work-elements-wrapper"
+                style={`background-color:${project.background}`}
+                data-link-area
+              >
+                <div class="work-link link-movement-target" aria-hidden="true">
+                  <div>View</div>
+                </div>
+
+                <div class="work-container">
+                  <div class="work-title-wrapper" style={`color:${project.color}`}>
+                    <h3 class="thumbnail-title">{project.title}</h3>
+                    <div class="project-category border-color-current-color">
+                      <div class="thumbnail-tags">{project.category}</div>
+                    </div>
+                  </div>
+
+                  {project.posters && <Posters />}
+
+                  <div class="work-video-wrapper">
+                    {project.cover ? (
+                      <div class="work-media">
+                        <img
+                          src={project.cover}
+                          alt={`${project.title} visual`}
+                          loading="eager"
+                          class:list={['work-media-logo', project.compactLogo && 'work-media-logo-compact']}
+                        />
+                        {project.hover && (
+                          <img
+                            src={project.hover}
+                            alt=""
+                            loading="lazy"
+                            class="work-media-image-hover"
+                          />
+                        )}
+                      </div>
+                    ) : (
+                      !project.posters && (
+                        <video
+                          autoplay
+                          loop
+                          muted
+                          playsinline
+                          preload="metadata"
+                          poster={`/videos/${project.video}-poster-00001.jpg`}
+                          class="work-video selected-video"
+                        >
+                          <source src={`/videos/${project.video}-transcode.mp4`} type="video/mp4" />
+                          <source src={`/videos/${project.video}-transcode.webm`} type="video/webm" />
+                        </video>
+                      )
+                    )}
+                  </div>
+                </div>
+
+                <a href={`/project/${project.slug}`} class="full-width-link w-inline-block">
+                  <span class="sr-only">View project {project.title}</span>
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/workList.js';
+</script>

@@ -1,0 +1,146 @@
+/* About section */
+
+.about-section {
+  background-color: var(--color--black);
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 120px;
+}
+
+.about-grid {
+  grid-column-gap: 90px;
+  grid-row-gap: 60px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 420px;
+  align-items: start;
+  display: grid;
+}
+
+.about-intro {
+  padding-top: 32px;
+}
+
+.about-label {
+  color: #b9b6b1;
+  font-family: var(--font-mono);
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+}
+
+.about-heading {
+  color: var(--color--white);
+  margin: 36px 0 0;
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.24;
+  letter-spacing: 0.01em;
+}
+
+.about-role {
+  color: var(--color--white);
+  margin: 24px 0 0;
+  max-width: 560px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.about-portrait {
+  width: 100%;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-portrait-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-copy {
+  grid-column-gap: 60px;
+  grid-row-gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 80px;
+  display: grid;
+}
+
+.about-copy p {
+  color: #d3d0cb;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.about-connect {
+  grid-column-gap: 10px;
+  color: #b9b6b1;
+  border-bottom: 1px solid #ffffff2e;
+  align-items: center;
+  width: fit-content;
+  margin-top: 56px;
+  padding-bottom: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: color 0.25s;
+  display: flex;
+}
+
+.about-connect:hover {
+  color: var(--color--white);
+}
+
+.about-connect-arrow {
+  margin-top: 2px;
+}
+
+@media screen and (width<=991px) {
+  .about-section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  .about-grid {
+    grid-row-gap: 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .about-intro {
+    padding-top: 0;
+  }
+
+  .about-heading {
+    margin-top: 26px;
+    font-size: 40px;
+  }
+
+  .about-role {
+    margin-top: 18px;
+    font-size: 23px;
+  }
+
+  .about-portrait {
+    max-width: 360px;
+  }
+
+  .about-copy {
+    grid-row-gap: 28px;
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .about-copy p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .about-connect {
+    margin-top: 36px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,33 @@
+/* Awards list */
+
+.achievement-section {
+  padding-top: var(--_sizes---section-padding);
+  padding-bottom: var(--_sizes---section-padding);
+  background-color: var(--color--yellow);
+}
+
+.achievement-container {
+  grid-column-gap: 100px;
+  grid-row-gap: 100px;
+  flex-flow: column;
+  display: flex;
+}
+
+.achievement-block {
+  z-index: 0;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  color: var(--color--black);
+  grid-template-rows: auto;
+  grid-template-columns: 0.35fr 0.75fr 0.25fr;
+  grid-auto-columns: 1fr;
+  place-items: center start;
+  padding: 30px 20px;
+  display: grid;
+  position: relative;
+}
+
+.achievement-arrow {
+  width: 30px;
+  height: 30px;
+}

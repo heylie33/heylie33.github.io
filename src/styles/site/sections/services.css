@@ -1,0 +1,173 @@
+/* Services accordion (also holds .client-logo-row*, which belongs to the client strip) */
+
+.services-section {
+  padding-top: var(--_sizes---section-padding);
+  padding-bottom: var(--_sizes---section-padding);
+  background-color: var(--color--pink);
+}
+
+.services-container {
+  grid-column-gap: 100px;
+  grid-row-gap: 100px;
+  flex-flow: column;
+  display: flex;
+}
+
+.client-logo-row {
+  grid-column-gap: min(5vw, 120px);
+  grid-row-gap: min(5vw, 120px);
+  flex: none;
+  justify-content: flex-end;
+  padding-left: min(5vw, 120px);
+  display: flex;
+}
+
+.client-logo-row-wrapper {
+  justify-content: flex-end;
+  align-items: stretch;
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.client-logo-left-gradient {
+  background-image: linear-gradient(90deg, #000, #0000);
+  width: 10%;
+  position: absolute;
+  inset: 0% auto 0% 0%;
+}
+
+.client-logo-right-gradient {
+  background-image: linear-gradient(270deg, #000, #0000);
+  width: 10%;
+  position: absolute;
+  inset: 0% 0% 0% auto;
+}
+
+.services-accordion-wrapper {
+  flex-flow: column;
+  display: flex;
+}
+
+.accordion {
+  background-color: #fff0;
+  flex-flow: column;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  display: flex;
+}
+
+.accordion.w--current {
+  background-color: #fff0;
+}
+
+.accordion-toggle {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  color: var(--color--black);
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 30px;
+  display: flex;
+}
+
+.accordion-toggle-icon {
+  border: 2px solid #000;
+  border-radius: 50%;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 0;
+  display: flex;
+}
+
+.accordion-toggle-vertical-line {
+  transform-origin: 50%;
+}
+
+.bg {
+  z-index: -1;
+  background-color: var(--color--white);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  position: absolute;
+  inset: 0%;
+  transform: scaleY(0);
+}
+
+.accordion-content-container {
+  background-color: var(--color--white);
+  display: none;
+  position: static;
+}
+
+.accoridon-content-wrapper {
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+}
+
+.accoridon-content {
+  color: var(--color--black);
+  white-space: pre-wrap;
+}
+
+.accordion-toggle-bg-open {
+  z-index: -2;
+  background-color: var(--color--white);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  position: absolute;
+  inset: 0%;
+  transform: scaleY(0);
+}
+
+/* "01 BRAND IDENTITY / 品牌视觉识别" — number and English carry the weight,
+   the Chinese part stays regular. */
+.accordion-elements-wraapper .h5 {
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+/* Title with the icon on the right, deliverables unfold underneath.
+   Prefixed with .accordion-toggle to win over the shared grid rule. */
+.accordion-toggle .accordion-elements-wraapper {
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+}
+
+.accordion-toggle .accordion-toggle-icon {
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: end;
+  margin-top: 0;
+}
+
+.accordion-toggle .accoridon-content-wrapper {
+  grid-area: 2 / 1 / 3 / 3;
+  max-width: none;
+}
+
+.accordion-toggle .accoridon-content {
+  padding-top: 18px;
+}
+
+.accordion-toggle .h5 {
+  grid-area: 1 / 1 / 2 / 2;
+  font-weight: 700;
+}
+
+.accordion-index {
+  margin-right: 4px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.accordion-title-cn {
+  font-weight: 400;
+}

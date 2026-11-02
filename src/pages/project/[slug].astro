@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { projects, otherProjects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const recent = otherProjects(project.slug);
+
+const isWide = (index: number) =>
+  project.allowWide &&
+  (project.wideAt
+    ? project.wideAt.includes(index)
+    : index % 5 === 0 ||
+      (project.wideLast !== false && index === project.gallery.length - 1));
+---
+
+<BaseLayout title={`${project.title} ${project.latin} — MA JIALEI`.trim()}>
+  <div class="project-nav">
+    <Navbar />
+  </div>
+
+  <main class="project-page">
+    <section class="project-hero">
+      <div class="main-container">
+        <a href="/#work" class="project-back">← BACK TO WORK</a>
+        <h1 class="project-hero-title">
+          {project.title}
+          {project.latin && <span class="project-hero-latin">{project.latin}</span>}
+        </h1>
+        <div class="project-hero-meta">
+          <span>{project.category}</span>
+        </div>
+      </div>
+
+      {
+        !project.posterGrid && (
+          <figure class="project-hero-figure">
+            <img
+              src={project.cover}
+              alt={`${project.title} ${project.latin}`}
+              class="project-hero-image"
+              fetchpriority="high"
+            />
+          </figure>
+        )
+      }
+    </section>
+
+    {
+      project.intro.length > 0 && (
+        <section
+          class="project-overview"
+          style={`background-color:${project.overviewBg};color:${project.overviewColor}`}
+        >
+          <div class="main-container">
+            <div class="project-overview-label">PROJECT OVERVIEW</div>
+
+            <div class="project-overview-body">
+              <div class="project-overview-column">
+                <div class="project-overview-copy">
+                  {project.intro.map((paragraph) => (
+                    <p data-reveal>{paragraph}</p>
+                  ))}
+                </div>
+
+                {project.tagsCn.length > 0 && (
+                  <ul class="project-tags project-tags-cn">
+                    {project.tagsCn.map((tag) => (
+                      <li class="project-tag">{tag}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
+              {project.introEn.length > 0 && (
+                <div class="project-overview-column project-overview-column-en">
+                  <div class="project-overview-copy project-overview-copy-en">
+                    {project.introEn.map((paragraph) => (
+                      <p data-reveal data-reveal-delay="80">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+
+                  {project.tagsEn.length > 0 && (
+                    <ul class="project-tags project-tags-en">
+                      {project.tagsEn.map((tag) => (
+                        <li class="project-tag">{tag}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="project-gallery-section">
+      <div
+        class:list={[
+          'project-gallery',
+          project.posterGrid && 'project-gallery-posters',
+        ]}
+      >
+        {
+          project.gallery.map((src, index) => (
+            <figure
+              class:list={['project-gallery-item', isWide(index) && 'is-wide']}
+            >
+              <img
+                src={src}
+                alt={`${project.title} 作品 ${index + 1}`}
+                loading="lazy"
+                class="project-gallery-image"
+              />
+            </figure>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="recent-work-section">
+      <div class="recent-work-head">
+        <h2 class="recent-work-title">Recent work</h2>
+        <a href="/#work" class="recent-work-all">
+          <span>View All Projects</span>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            aria-hidden="true"
+            class="recent-work-arrow"
+          >
+            <path
+              d="M3 11L11 3M11 3V9.5M11 3H4.5"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="recent-work-grid">
+        {
+          recent.map((item) => (
+            <a
+              href={`/project/${item.slug}`}
+              class="recent-work-card"
+              style={`background-color:${item.background}`}
+            >
+              <img
+                src={item.thumb}
+                alt={item.title}
+                loading="lazy"
+                class="recent-work-thumb"
+              />
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import '../../scripts/posterGrid.js';
+</script>

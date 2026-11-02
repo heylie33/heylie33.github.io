@@ -1,0 +1,54 @@
+---
+import Marquee from './Marquee.astro';
+
+const logos = [1, 2, 3, 4, 5];
+---
+
+<section class="client-section">
+  <Marquee items={['Clients']} />
+
+  <h2 class="sr-only">Clients</h2>
+
+  <div class="client-container">
+    <div class="client-logo-row-wrapper">
+      <div class="client-logo-row transform-left-to-right" data-logo-track>
+        <div class="client-logos-container">
+          {
+            logos.map((logo) => (
+              <div class="client-logo-wrapper">
+                <img
+                  src={`/images/client-logo-${logo}.svg`}
+                  loading="lazy"
+                  alt="Client logo"
+                  class="client-logo"
+                />
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="client-logos-container" aria-hidden="true">
+          {
+            logos.map((logo) => (
+              <div class="client-logo-wrapper">
+                <img
+                  src={`/images/client-logo-${logo}.svg`}
+                  loading="lazy"
+                  alt=""
+                  class="client-logo"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="client-logo-right-gradient"></div>
+      <div class="client-logo-left-gradient"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/clients.js';
+</script>

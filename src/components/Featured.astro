@@ -1,0 +1,63 @@
+---
+const slides = [
+  { src: '/images/featured/featured-01.jpg', alt: 'Office interior — reception area' },
+  { src: '/images/featured/featured-02.jpg', alt: 'Office interior — meeting room' },
+  { src: '/images/featured/featured-03.jpg', alt: 'Office interior — workspace' },
+];
+---
+
+<section id="Features" class="featured-section">
+  <div class="featured-container">
+    <div class="featured-collection" data-link-area>
+      <div class="featured-collection-list">
+        <div class="featured-collection-item">
+          <div class="featured-content-wrapper">
+            <div
+              class="section-title-big featured-title-left"
+              data-featured-left
+              aria-hidden="true"
+            >
+              Feat
+            </div>
+
+            <div class="featured-video featured-video-cell featured-slides" data-featured-slides>
+              {
+                slides.map((slide, index) => (
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    width="900"
+                    height="900"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    class:list={['featured-slide', index === 0 && 'is-active']}
+                    data-featured-slide
+                  />
+                ))
+              }
+            </div>
+
+            <div
+              class="section-title-big featured-title-right"
+              data-featured-right
+              aria-hidden="true"
+            >
+              ured
+            </div>
+          </div>
+
+          <div class="feature-link link-movement-target" aria-hidden="true">
+            <div>View</div>
+          </div>
+
+          <a href="/project/xianxiaofang" class="full-width-link w-inline-block">
+            <span class="sr-only">Featured project: 鲜小方 FAYO</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/featured.js';
+</script>

@@ -1,0 +1,135 @@
+---
+const services = [
+  {
+    index: '01',
+    label: 'BRAND IDENTITY',
+    title: '品牌视觉识别',
+    deliverables: 'Logo、VI系统、品牌视觉规范',
+  },
+  {
+    index: '02',
+    label: 'COMMERCIAL DESIGN',
+    title: '电商设计',
+    deliverables: '包装、产品视觉、电商页面',
+  },
+  {
+    index: '03',
+    label: 'CAMPAIGN VISUAL',
+    title: '营销活动视觉',
+    deliverables: '主KV、社媒视觉、线上线下物料',
+  },
+];
+
+const experiences = [
+  { date: '2024—2026', company: '广州海齐跃家居贸易有限公司', role: '品牌视觉设计师' },
+  { date: '2023—2024', company: '广州博拉广告有限公司', role: '平面设计师' },
+  { date: '2021—2023', company: '上海鱼宙文化传播有限公司', role: '平面设计师' },
+];
+---
+
+<div class="bg-color-animation-wrapper" data-color-wash>
+  <section class="services-section">
+    <div class="w-layout-blockcontainer main-container w-container">
+      <div class="services-container">
+        <h2 class="section-title-medium font-color-black">I’m good at..</h2>
+
+        <div class="services-accordion-wrapper">
+          {
+            services.map((service, index) => (
+              <div class="accordion-wrapper" data-hover="line">
+                <div class="accordion w-dropdown">
+                  <div
+                    class="accordion-toggle w-dropdown-toggle"
+                    role="button"
+                    tabindex="0"
+                    aria-expanded="false"
+                    aria-controls={`service-panel-${index}`}
+                    data-hover="bg"
+                    data-accordion-toggle
+                  >
+                    <div class="accordion-elements-wraapper">
+                      <h3 class="h5">
+                        <span class="accordion-index">{service.index}</span>
+                        {" "}
+                        {service.label}
+                        {" / "}
+                        <span class="accordion-title-cn">{service.title}</span>
+                      </h3>
+
+                      <div
+                        class="accoridon-content-wrapper accordion-content-cell"
+                        id={`service-panel-${index}`}
+                        data-accordion-panel
+                      >
+                        <div class="accoridon-content">
+                          <p class="paragraph-medium">{service.deliverables}</p>
+                        </div>
+                      </div>
+
+                      <svg
+                        width="36"
+                        height="36"
+                        viewBox="0 0 36 36"
+                        class="accordion-toggle-icon accordion-icon-cell"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M18.249 11.25V25.25"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke="currentColor"
+                          stroke-linejoin="round"
+                          class="accordion-toggle-vertical-line"
+                        />
+                        <path
+                          d="M11.25 18.25H25.25"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke="currentColor"
+                          stroke-linejoin="round"
+                          class="accordion-toggle-horizontal-line"
+                        />
+                      </svg>
+                    </div>
+
+                    <div class="bg"></div>
+                    <div class="accordion-toggle-bg-open"></div>
+                  </div>
+                </div>
+
+                <div class="animated-line-wrapper accordion-line">
+                  <div class="animated-line accordion-line"></div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience-section">
+    <div class="w-layout-blockcontainer main-container w-container">
+      <div class="experience-contianer">
+        <h2 class="section-title-medium font-color-black">Work experience..</h2>
+
+        <div class="experiences-blocks-wrapper">
+          {
+            experiences.map((experience) => (
+              <div class="experience-row">
+                <div class="experience-date">{experience.date}</div>
+                <h3 class="experience-company">{experience.company}</h3>
+                <div class="experience-role">{experience.role}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  import '../scripts/expertise.js';
+</script>

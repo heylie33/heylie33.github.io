@@ -1,0 +1,135 @@
+/* Grid / alignment cells for individual section children */
+
+.hero-name-cell {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+.hero-display-line,
+.hero-display-line {
+  grid-area: span 1 / span 2 / span 1 / span 2;
+}
+
+.hero-circular-cell {
+  place-self: center;
+}
+
+.featured-title-left {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+.about-heading-cell {
+  align-self: stretch;
+}
+
+.about-para-cell {
+  grid-area: span 1 / span 2 / span 1 / span 2;
+}
+
+.accordion-content-cell {
+  place-self: center;
+}
+
+.accordion-icon-cell {
+  justify-self: end;
+}
+
+.exp-arrow-cell {
+  place-self: center end;
+}
+
+.exp-date-cell {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+.exp-arrow-cell,
+.award-arrow-cell,
+.award-arrow-cell,
+.award-arrow-cell,
+.award-arrow-cell {
+  place-self: center end;
+}
+
+.form-email-cell {
+  grid-area: 2/1/3/2;
+}
+
+.form-message-cell {
+  grid-area: span 2 / span 1 / span 2 / span 1;
+}
+
+.form-submit-cell {
+  grid-area: span 1 / span 2 / span 1 / span 2;
+}
+
+.footer-copyright-cell {
+  align-self: end;
+}
+
+.footer-utility-cell {
+  grid-area: 2/3/3/4;
+  align-self: end;
+}
+
+.footer-top-cell {
+  place-self: center;
+}
+
+.nav-links-cell {
+  justify-self: center;
+}
+
+.nav-contact-cell,
+.nav-social-cell {
+  justify-self: end;
+}
+
+.nav-phone-cell {
+  justify-self: start;
+}
+
+.nav-social-cell {
+  justify-self: end;
+}
+
+.guide-cell,
+.guide-cell,
+.guide-cell,
+.guide-cell {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+.project-desc-cell {
+  grid-area: span 2 / span 1 / span 2 / span 1;
+}
+
+.gallery-slot-3,
+.gallery-slot-4 {
+  grid-area: span 1 / span 2 / span 1 / span 2;
+}
+
+.gallery-slot-5,
+.gallery-slot-6 {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+.gallery-slot-7 {
+  grid-area: span 1 / span 2 / span 1 / span 2;
+}
+
+.recent-title-cell {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+  justify-self: start;
+}
+
+.recent-button-cell {
+  grid-area: 1/2/2/3;
+  place-self: center end;
+}
+
+.recent-list-cell {
+  grid-area: span 1 / span 2 / span 1 / span 2;
+}
+
+.recent-item-cell {
+  place-self: center;
+}

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.tmp-*
+
+# 原始设计稿 / 旧站导出，不参与构建，避免仓库体积过大
+assets/
+robert-smith-astro.vercel.app/
+openspec/
+image.png

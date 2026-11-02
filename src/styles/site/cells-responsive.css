@@ -1,0 +1,134 @@
+/* Responsive overrides for the grid / alignment cells */
+
+@media screen and (width<=991px) {
+  .about-heading-cell {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+  }
+  .about-image-cell {
+    grid-area: 1/1/2/2;
+    justify-self: start;
+  }
+  .about-para-cell {
+    grid-column: span 1 / span 1;
+  }
+  .accordion-content-cell,
+  .accordion-content-cell,
+  .accordion-content-cell,
+  .accordion-content-cell,
+  .accordion-content-cell {
+    grid-area: 2/1/3/3;
+  }
+  .nav-social-cell {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+    justify-self: end;
+  }
+  .project-desc-cell {
+    grid-row: span 1 / span 1;
+  }
+  .project-client-cell {
+    grid-area: 3/1/4/2;
+  }
+}
+
+@media screen and (width<=767px) {
+  .hero-name-cell {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+  }
+  .hero-display-line,
+  .hero-display-line {
+    grid-column: span 1 / span 1;
+  }
+  .featured-title-left {
+    justify-self: end;
+  }
+  .featured-video-cell {
+    grid-area: 2/1/3/3;
+  }
+  .featured-title-right {
+    justify-self: start;
+  }
+  .exp-date-cell {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+  }
+  .exp-title-cell {
+    grid-area: 2/1/3/2;
+  }
+  .exp-arrow-cell {
+    grid-area: span 2 / span 1 / span 2 / span 1;
+    place-self: center end;
+  }
+  .award-title-cell {
+    grid-area: 2/1/3/2;
+  }
+  .award-arrow-cell {
+    grid-area: span 2 / span 1 / span 2 / span 1;
+    place-self: center end;
+  }
+  .form-message-cell {
+    grid-row: span 1 / span 1;
+  }
+  .form-submit-cell {
+    grid-column: span 1 / span 1;
+  }
+  .footer-copyright-cell {
+    grid-area: span 1 / span 2 / span 1 / span 2;
+    align-self: end;
+  }
+  .footer-utility-cell {
+    grid-area: 3/1/4/3;
+    justify-self: start;
+  }
+  .footer-top-cell {
+    grid-area: 2/3/4/4;
+    justify-self: end;
+  }
+  .recent-title-cell {
+    place-self: center;
+  }
+  .recent-button-cell {
+    order: 9999;
+    grid-area: span 1 / span 1 / span 1 / span 1;
+    justify-self: center;
+  }
+  .recent-list-cell {
+    grid-column: span 1 / span 1;
+  }
+}
+
+@media screen and (width<=479px) {
+  .hero-name-cell {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+  }
+  .footer-nav-cell {
+    grid-area: 1/1/2/2;
+  }
+  .footer-contact-cell {
+    grid-area: 2/1/3/2;
+  }
+  .footer-social-cell {
+    grid-area: 3/1/4/2;
+  }
+  .footer-copyright-cell {
+    grid-area: 4/1/5/2;
+    align-self: end;
+  }
+  .footer-utility-cell {
+    grid-area: 5/1/6/2;
+    place-self: end start;
+  }
+  .footer-top-cell {
+    grid-area: 1/1/2/2;
+    align-self: start;
+  }
+  .nav-email-cell {
+    justify-self: start;
+  }
+  .nav-phone-cell {
+    grid-area: 2/1/3/2;
+  }
+  .gallery-slot-3,
+  .gallery-slot-4,
+  .gallery-slot-7 {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+  }
+}

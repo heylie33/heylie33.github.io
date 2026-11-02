@@ -1,0 +1,531 @@
+/* Single project page */
+
+.project-section {
+  padding-top: var(--_sizes---section-padding);
+  background-image: url(/images/project-bg-pattern.svg);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: 1920px 700px;
+}
+
+.project-container {
+  grid-column-gap: 100px;
+  grid-row-gap: 100px;
+  text-align: center;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+}
+
+.project-main-image-wrapper {
+  aspect-ratio: 26/15;
+  width: 100%;
+}
+
+.project-main-image {
+  width: 100%;
+  height: 100%;
+}
+
+.project-description-wrapper {
+  grid-column-gap: 100px;
+  grid-row-gap: 0px;
+  text-align: left;
+  grid-template-rows: auto 32px;
+  grid-template-columns: 1.25fr minmax(270px, 0.4fr);
+  grid-auto-columns: 1fr;
+  width: 100%;
+  max-width: 1080px;
+  margin: 50px auto;
+  display: grid;
+}
+
+.project-categories-collection-list {
+  grid-column-gap: 10px;
+  grid-row-gap: 12px;
+  flex-flow: wrap;
+  display: flex;
+}
+
+.project-category {
+  border: 1px solid #fff;
+  border-radius: 100px;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 14px;
+  padding-right: 14px;
+  display: flex;
+}
+
+.project-category.border-color-current-color {
+  border-color: currentColor;
+}
+
+.project-link-wrapper {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.project-link-arrow {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+}
+
+.project-link {
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  color: var(--color--white);
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.project-images-wrapper {
+  grid-column-gap: 60px;
+  grid-row-gap: 60px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+}
+
+.project-images-light-box {
+  position: relative;
+}
+
+.project-light-box-image {
+  object-fit: cover;
+}
+
+.recent-work-wrapper {
+  grid-column-gap: 80px;
+  grid-row-gap: 60px;
+  text-align: left;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 0.5fr;
+  grid-auto-columns: 1fr;
+  place-items: center;
+  width: 100%;
+  margin-top: 100px;
+  display: grid;
+}
+
+.recent-work-collection-list-wrapper {
+  width: 100%;
+}
+
+.recent-work-collection-list {
+  grid-column-gap: 80px;
+  grid-row-gap: 80px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  width: 100%;
+  display: grid;
+}
+
+.recent-work-collection-item {
+  aspect-ratio: 1;
+  width: 100%;
+  max-height: 360px;
+}
+
+.recent-work-block {
+  width: 100%;
+  height: 100%;
+  padding: 20% 10%;
+}
+
+.full-width-video {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-video {
+  z-index: 1;
+  aspect-ratio: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- project detail page (case study) --- */
+
+.project-page {
+  background-color: var(--color--black);
+  padding-top: 180px;
+}
+
+.project-hero .main-container {
+  max-width: 1420px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.project-back {
+  color: #8f8c88;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.project-back:hover {
+  color: var(--color--white);
+}
+
+.project-hero-title {
+  color: var(--color--white);
+  letter-spacing: -0.02em;
+  align-items: baseline;
+  gap: 22px;
+  margin: 34px 0 0;
+  font-size: clamp(52px, 7vw, 104px);
+  font-weight: 500;
+  line-height: 1.05;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-hero-latin {
+  color: #8f8c88;
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  font-size: 0.3em;
+}
+
+.project-hero-meta {
+  color: #b9b6b1;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  gap: 28px;
+  margin-top: 26px;
+  font-size: 13px;
+  line-height: 1;
+  display: flex;
+}
+
+.project-hero-figure {
+  width: 100%;
+  max-width: 1420px;
+  margin: 70px auto 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.project-hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navbar side items line up with the gallery edges instead of the narrower
+   content container used on the home page. */
+.project-nav .nav-container {
+  max-width: 1420px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.project-overview {
+  background-color: #141414;
+  width: calc(100% - 60px);
+  max-width: 1360px;
+  margin: 40px auto 0;
+  padding: 84px 60px 74px;
+}
+
+.project-overview .main-container {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.project-overview-label {
+  color: currentColor;
+  opacity: 0.5;
+  font-family: var(--font-mono);
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.project-overview-body {
+  grid-column-gap: 60px;
+  grid-row-gap: 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  margin-top: 44px;
+  display: grid;
+}
+
+.project-overview-column {
+  flex-direction: column;
+  min-width: 0;
+  display: flex;
+}
+
+.project-overview-copy p {
+  color: currentColor;
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.project-overview-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* Translation column: same block, slightly smaller so the Chinese copy keeps
+   the leading role while the English reads as a parallel version. */
+.project-overview-copy-en p {
+  font-size: 17px;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+.project-tags-en,
+.project-tags-cn {
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.project-tag {
+  color: inherit;
+  white-space: nowrap;
+  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  border-radius: 100px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.project-gallery-section {
+  padding: 100px 30px 140px;
+}
+
+/* The overview block already separates the hero from the gallery, so the
+   first image only needs the same gap as the images below it. */
+.project-overview + .project-gallery-section {
+  padding-top: 40px;
+}
+
+.project-gallery {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  display: grid;
+}
+
+.project-gallery-item {
+  margin: 0;
+}
+
+.project-gallery-item.is-wide {
+  grid-column: 1 / -1;
+}
+
+.project-gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Poster decks fill the page with a dense grid instead of a two-column flow. */
+.project-gallery-posters {
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Waterfall layout applied by scripts/posterGrid.js */
+.project-gallery-posters.is-masonry {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.project-gallery-column {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-gallery-posters.is-masonry .project-gallery-item {
+  width: 100%;
+}
+
+/* --- recent work on a case study page --- */
+
+.recent-work-section {
+  width: 100%;
+  max-width: 1420px;
+  margin-inline: auto;
+  padding: 0 30px 140px;
+}
+
+.recent-work-head {
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 46px;
+  display: flex;
+}
+
+.recent-work-title {
+  color: var(--color--white);
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.recent-work-all {
+  color: var(--color--white);
+  border-bottom: 1px solid #ffffff59;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  display: flex;
+}
+
+.recent-work-all:hover {
+  opacity: 0.7;
+}
+
+.recent-work-arrow {
+  margin-top: 1px;
+}
+
+.recent-work-grid {
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+}
+
+.recent-work-card {
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+}
+
+.recent-work-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.recent-work-card:hover .recent-work-thumb {
+  transform: scale(1.06);
+}
+
+@media screen and (width<=991px) {
+  .project-page {
+    padding-top: 130px;
+  }
+
+  .project-hero-figure {
+    margin-top: 44px;
+  }
+
+  .project-overview {
+    margin-top: 20px;
+    padding: 60px 24px 56px;
+  }
+
+  .project-overview-body {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+
+  .project-overview-copy p {
+    font-size: 17px;
+  }
+
+  .project-overview-copy-en p {
+    font-size: 16px;
+  }
+
+  .project-tags-en,
+  .project-tags-cn {
+    margin-top: 28px;
+  }
+
+  .project-gallery-section {
+    padding: 60px 20px 90px;
+  }
+
+  .project-overview + .project-gallery-section {
+    padding-top: 20px;
+  }
+
+  .project-gallery {
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery-posters {
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recent-work-section {
+    padding: 0 20px 90px;
+  }
+
+  .recent-work-head {
+    align-items: flex-start;
+    margin-bottom: 28px;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .recent-work-grid {
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-template-columns: 1fr;
+  }
+}
+

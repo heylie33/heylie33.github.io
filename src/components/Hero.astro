@@ -1,0 +1,70 @@
+---
+import Button from './shared/Button.astro';
+---
+
+<section class="hero-section">
+  <div class="w-layout-blockcontainer main-container w-container">
+    <div class="hero-container">
+      <div class="hero-heading-wrapper">
+        <div class="hero-text-name-wrapper hero-name-cell">
+          <div class="hero-hello">Hello,</div>
+          <div class="hero-name">MA JIALEI</div>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="display hero-display-line">Brand Visual</span>
+          <span class="display hero-display-line">Designer</span>
+        </h1>
+
+        <a
+          href="#Features"
+          class="circular-link hero-circular-cell w-inline-block"
+          aria-label="Explore my works"
+        >
+          <svg class="circular-link-text" viewBox="0 0 200 200" data-rotate aria-hidden="true">
+            <defs>
+              <path
+                id="circular-link-path"
+                d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"
+                fill="none"></path>
+            </defs>
+            <text class="circular-link-label">
+              <textPath href="#circular-link-path" startOffset="0"
+                >EXPLORE MY WORKS · EXPLORE MY WORKS ·</textPath
+              >
+            </text>
+          </svg>
+          <img src="/images/down-icon.svg" alt="" class="circular-link-arrow" />
+        </a>
+      </div>
+
+      <div class="hero-para-wrapper">
+        <div class="hero-intro">
+          <h2 class="hero-role">品牌视觉设计师</h2>
+          <p class="hero-lead" data-reveal>
+            拥有5年视觉设计经验，涵盖品牌视觉、包装设计、电商视觉及活动设计等领域，能够结合品牌定位与实际需求，完成视觉设计与应用落地。
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <Button variant="solid" href="#Features" label="View My Work" />
+          <Button variant="solid" href="#about" label="About Me" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/hero.js';
+</script>
+
+<style>
+  .hero-title {
+    display: contents;
+  }
+
+  .hero-title .display {
+    display: block;
+  }
+</style>

@@ -1,0 +1,86 @@
+---
+const navLinks = [
+  { href: '/#top', label: 'Home', current: Astro.url.pathname === '/' },
+  { href: '/#work', label: 'Work', current: false },
+  { href: '/#about', label: 'About', current: false },
+  { href: '/#contact', label: 'Contact', current: false },
+];
+
+const contactLinks = [
+  { href: 'tel:+8617798561063', label: '17798561063' },
+  { href: 'mailto:793675257@qq.com', label: '793675257@qq.com' },
+];
+---
+
+<header class="navbar w-nav" data-navbar>
+  <div class="nav-container">
+    <a href="/" class="brand visible-from-tablet w-nav-brand" aria-label="MA JIALEI home">
+      <div class="logo-wrapper">MA JIALEI</div>
+    </a>
+
+    <div class="nav-overlay" data-nav-overlay></div>
+
+    <nav class="nav-menu w-nav-menu" id="site-menu" aria-label="Main">
+      <div class="nav-links-container">
+        <a href="/" class="brand w-nav-brand" aria-label="MA JIALEI home">
+          <div class="logo-wrapper">MA JIALEI</div>
+        </a>
+
+        <div class="nav-links-wrapper nav-links-cell">
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class:list={['menu', 'w-nav-link', link.current && 'w--current']}
+                aria-current={link.current ? 'page' : undefined}
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="nav-contact-social-links-wrapper nav-contact-cell">
+          {
+            contactLinks.map((link) => (
+              <a href={link.href} class="nav-contact-link w-inline-block">
+                <div>{link.label}</div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </nav>
+
+    <button
+      type="button"
+      class="menu-button w-nav-button"
+      aria-label="Open menu"
+      aria-controls="site-menu"
+      aria-expanded="false"
+      data-nav-button
+    >
+      <span class="menu-icon">
+        <svg
+          width="38"
+          height="26"
+          viewBox="0 0 38 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M1 3H37M1 13H37M1 23H37"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</header>
+
+<script>
+  import '../scripts/navbar.js';
+</script>

@@ -1,0 +1,40 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+
+const slots = [0, 1];
+const repeats = [0, 1, 2];
+---
+
+<div class="marquee-container" aria-hidden="true">
+  <div class="marquee-wrapper">
+    <div class="marquee-text-wrapper transform-right-to-left">
+      {
+        slots.map(() => (
+          <div class="marquee-text-slot">
+            {repeats.map(() =>
+              items.map((item) => (
+                <>
+                  <div class="marquee-text">{item}</div>
+                  <img
+                    src="/images/Marqee-Arrow.svg"
+                    loading="lazy"
+                    alt=""
+                    class="marquee-arrow"
+                  />
+                </>
+              )),
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  import '../scripts/marquee.js';
+</script>

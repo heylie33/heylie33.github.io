@@ -1,0 +1,40 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  variant?: 'link' | 'solid';
+}
+
+const { href, label, variant = 'link' } = Astro.props;
+---
+
+<div class="button-wrapper" data-reveal data-reveal-delay="100" data-reveal-offset="0">
+  {
+    variant === 'solid' ? (
+      <a href={href} class="button button--solid w-inline-block" data-hover="arrow">
+        <span class="button-text">{label}</span>
+        <img
+          src="/images/button-arrow-white.svg"
+          loading="lazy"
+          alt=""
+          class="button-arrow target-arrow"
+        />
+      </a>
+    ) : (
+      <a href={href} class="button w-inline-block" data-hover="arrow line">
+        <div class="button-text-wrapper">
+          <div class="button-text">{label}</div>
+          <img
+            src="/images/button-arrow-white.svg"
+            loading="lazy"
+            alt=""
+            class="button-arrow target-arrow"
+          />
+        </div>
+        <div class="animated-line-wrapper">
+          <div class="animated-line"></div>
+        </div>
+      </a>
+    )
+  }
+</div>

@@ -1,0 +1,68 @@
+/* Accessibility helpers, JS reveal state and nav menu button */
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.js [data-reveal] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    opacity: 1;
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+  outline-offset: 4px;
+  outline: 2px solid;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a.project-category {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-button {
+  color: inherit;
+  background: 0 0;
+  border: 0;
+}
+
+@media screen and (width<=991px) {
+  .nav-menu {
+    visibility: hidden;
+    transition:
+      transform 0.4s,
+      visibility 0s linear 0.4s;
+    transform: translate(100%);
+  }
+  .navbar.is-open .nav-menu {
+    visibility: visible;
+    transition:
+      transform 0.4s,
+      visibility;
+    transform: none;
+  }
+}
+
+.footer-form:after {
+  content: "";
+}

@@ -1,0 +1,40 @@
+---
+const posters = [
+  '01',
+  '02',
+  '03',
+  '04',
+  '05',
+  '06',
+  '07',
+  '09',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+];
+
+/* Two identical runs so the loop can jump back without a visible seam. */
+const looped = [...posters, ...posters];
+---
+
+<div class="work-posters">
+  <div class="work-poster-track" data-poster-track>
+    {
+      looped.map((id, index) => (
+        <img
+          src={`/images/posters/${id}.jpg`}
+          alt=""
+          loading={index < 7 ? 'eager' : 'lazy'}
+          class="work-poster-card"
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  import '../scripts/posters.js';
+</script>
