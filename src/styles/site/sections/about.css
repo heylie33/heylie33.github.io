@@ -75,13 +75,21 @@
   line-height: 1.7;
 }
 
+.about-actions {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px 48px;
+  margin-top: 56px;
+  display: flex;
+}
+
 .about-connect {
   grid-column-gap: 10px;
   color: #b9b6b1;
   border-bottom: 1px solid #ffffff2e;
   align-items: center;
   width: fit-content;
-  margin-top: 56px;
   padding-bottom: 10px;
   font-size: 22px;
   font-weight: 500;
@@ -139,8 +147,11 @@
     line-height: 1.7;
   }
 
-  .about-connect {
+  .about-actions {
     margin-top: 36px;
+  }
+
+  .about-connect {
     font-size: 18px;
   }
 }
