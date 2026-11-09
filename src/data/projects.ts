@@ -143,11 +143,11 @@ export const projects: Project[] = [
     color: '#ffffff',
     thumb: '/images/work/sweat-hover.jpg',
     intro: [
-      '安德玛响应疫情后的运动需求，号召女性运动爱好者回归户外。活动设置了3公里环城跑、灵动塑形、大腿腿挑战等课程，并打造飞盘、腰旗橄榄球、团体舞蹈等团队运动体验区。',
+      '安德玛响应疫情后的运动需求，号召女性运动爱好者回归户外。活动设置了3公里环城跑、灵动塑形、大踢腿挑战等课程，并打造飞盘、腰旗橄榄球、团体舞蹈等团队运动体验区。',
       '通过多样化的运动形式，将专业运动与休闲生活相结合，进一步加深大众对品牌的认知。',
     ],
     introEn: [
-      'Answering the post-pandemic appetite for movement, Under Armour called women back outdoors. The programme staged a 3 km city run plus mobility, sculpting and thigh-challenge classes, alongside team-sport zones for frisbee, flag football and group dance.',
+      'Answering the post-pandemic appetite for movement, Under Armour called women back outdoors. The programme staged a 3 km city run plus mobility, sculpting and leg-kick challenge classes, alongside team-sport zones for frisbee, flag football and group dance.',
       'By pairing professional training with everyday leisure across varied formats, it deepened the public’s understanding of the brand.',
     ],
     tagsEn: ['Visual Collateral Design', 'KV Design'],
